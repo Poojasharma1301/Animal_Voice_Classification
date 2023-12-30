@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animal Sound Classification</title>
+	<link rel="icon" href="data:,">
+</head>
+
+<body>
+		<nav >
+		<h4 class="mb-4" style="color:rgb(241, 239, 239); text-align: center; background-color: #000000; height: 50px;" >Animal Sound Classification Using Audio</h4>
+		</nav>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+      <div class="contentform">
+        <div><input type="file" name="file" id="validationCustom011" required="required"/>
+          <!-- <div class="invalid-feedback">
+          Please Select Audio File
+        </div> -->
+      </div>
+      <br>
+        <button  type="submit " style="box-shadow: 0 4px 15px 0 rgba(241, 243, 243, 0.75); background-image: linear-gradient(to right, #080808, #f76d5a, #f26775, #e85255);">Predict Animal</button>
+            <div class="results" style="display: flex; flex-direction: column; align-items: center;">
+              <h3 class="alert  text-center" style="background-color: #000000 !important;" role="alert">{{ prediction_text }}<h3>          
+    </div>
+      </form>
+  </div>
+
+<script>(function () {
+          'use strict'
+        
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.querySelectorAll('.needs-validation')
+        
+          // Loop over them and prevent submission
+          Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+              form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                  event.preventDefault()
+                  event.stopPropagation()
+                }
+        
+                form.classList.add('was-validated')
+              }, false)
+            })
+        })()</script>
+
+  <style>
+        html { width: 100%; height:100vh; overflow:visible; }
+        
+        body {
+          text-align: center;
+          width: auto;
+          height:100%;
+          font-family: 'Open Sans', sans-serif;
+          color: #fff;
+          font-size: 18px;
+          text-align:center;
+          letter-spacing:1.2px;
+          background-repeat: no-repeat !important;
+          background-size: 100vw 100vh!important;
+          background-size: cover;
+          background-image:url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/a6847a68-ed5a-4f4b-9e94-cdfaca2367dd/d1ipl1m-55af2220-9e49-4a42-b72f-82b5d85a89fa.png');
+          background-attachment: fixed;
+        }
+         h1 {text-align: center;}
+        form {
+            display: inline-block;
+        }
+        .login {
+          position: absolute;
+          top: 40%;
+          left: 50%;
+          margin: -150px 0 0 -150px;
+          width:400px;
+          height:400px;
+        }
+        .login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
+        input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+        </style>
+    </body>
+</html>
